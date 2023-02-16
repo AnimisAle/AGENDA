@@ -7,22 +7,24 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="Site.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
         <form id="form1" runat="server">
-        <header> <h1> Agenda web</h1></header>
+        <header> <h1> Agenda web</h1>
         <nav>
             <asp:Menu runat="server" OnMenuItemClick="Unnamed1_MenuItemClick1" Orientation="Horizontal">
                 <Items>
                     <asp:MenuItem NavigateUrl="~/index.aspx" Text="Home" Value="Home"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Usuarios.aspx" Text="Usuario" Value="Usuario"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/Contatos.aspx" Text="Contato" Value="Contato"></asp:MenuItem>
-                    <asp:MenuItem Text="Sair" Value="Sair"></asp:MenuItem>
+                    <asp:MenuItem Text="Sair" Value="Sair" NavigateUrl="~/login.aspx"></asp:MenuItem>
                 </Items>
             </asp:Menu>
             <br />
 
         </nav>
+        </header>
         <main>
                 <div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

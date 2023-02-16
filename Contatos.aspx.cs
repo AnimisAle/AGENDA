@@ -22,6 +22,9 @@ namespace AgendaLucasTesteNoSSD
 
         protected void AcaoClick(object sender, EventArgs e)
         {
+            try{
+                if(txbEmail.Text != "" && txbNome.Text != "" && txbTelefone.Text != ""){ 
+            
             //capturar a string de conexão
             System.Configuration.Configuration rootWebConfig = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
             System.Configuration.ConnectionStringSettings connString;
@@ -39,6 +42,14 @@ namespace AgendaLucasTesteNoSSD
             cmd.ExecuteNonQuery();
             con.Close();
             GridView1.DataBind();
+                }
+                else
+                {
+                    throw new Exception("Campos em branco");
+                }
+            }catch(Exception erro) {
+                Response.Write("<script> alert('" +erro.Message + "');</script>");
+            }
         }
     }
 }

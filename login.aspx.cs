@@ -36,12 +36,17 @@ namespace AgendaLucasTesteNoSSD
             SqlDataReader registro = cmd.ExecuteReader();
             if(registro.HasRows)
             {
+                //cookie 
+                HttpCookie login = new HttpCookie("login",txbEmail.Text);
+                Response.Cookies.Add(login);
                 //direcionar para a página principal
-                IMsg.Text = "Congratulations";
+                Response.Redirect("~/index.aspx"); 
+                //IMsg.Text = "Congratulations";
             }
             else
-            {
-                IMsg.Text = "E-mail ou senha incorretos"; 
+            {   
+                Response.Write("<script> alert('email ou senha incorretos!!!');</script>");
+                //IMsg.Text = "E-mail ou senha incorretos"; 
             }
         }
     }
