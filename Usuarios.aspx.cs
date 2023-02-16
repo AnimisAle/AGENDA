@@ -17,7 +17,8 @@ namespace AgendaLucasTesteNoSSD
         {
             if(e.Exception!= null)
             {
-                IMsg.Text = "Inserindo um registro duplicado ou com os campos em branco";  
+                Response.Write("<script> alert('Inserindo um resgistro duplicado ou com campos em branco');</script>");
+                //IMsg.Text = "Inserindo um registro duplicado ou com os campos em branco";  
                 e.ExceptionHandled = true;
             }
         }
@@ -26,7 +27,8 @@ namespace AgendaLucasTesteNoSSD
         {
             if (e.Exception != null)
             {
-                IMsg.Text = "Alterando um registro sem informar todos os campos";
+                Response.Write("<script> alert('Alterando um registro sem informar todos os campos');</script>");
+                //IMsg.Text = "Alterando um registro sem informar todos os campos";
                 e.ExceptionHandled = true;
             }
         }

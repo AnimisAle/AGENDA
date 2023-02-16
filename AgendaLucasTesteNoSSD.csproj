@@ -75,6 +75,7 @@
     <Content Include="Imagens\teste.png" />
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="Site.css" />
     <Content Include="Usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
